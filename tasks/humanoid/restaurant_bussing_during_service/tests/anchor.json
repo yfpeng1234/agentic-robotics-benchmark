@@ -1,0 +1,8 @@
+{
+ "metric": "service_score",
+ "direction": "higher",
+ "value": 0.5315,
+ "full_at": 0.98,
+ "source": "Measured: the privileged reference busser (tests/bistro_cell/reference.py, run_shift) on the three shifts of the fixed hidden set (tests/hidden/seeds.json), each run once on the oracle's path (a privileged CellServer, one frame per public camera, then reference_shift), 2026-11-28, in the task image with the BLAS pinned as tests/test.sh pins it: 1492138996: 0.5816 (credit {'tables': 4.1, 'spill': 1.75, 'dish_return': 0.81, 'closing': 0.4}, penalty 1.25, safety True, 4076 s sim); 1624528916: 0.5872 (credit {'tables': 3.56, 'spill': 1.75, 'dish_return': 0.66, 'closing': 0.4}, penalty 0.50, safety True, 4035 s sim); 671106925: 0.4258 (credit {'tables': 3.07, 'spill': 1.75, 'dish_return': 0.29, 'closing': 0.4}, penalty 1.25, safety True, 3991 s sim); mean 0.5315.",
+ "note": "service_score is already on [0, 1]: the episode mean of the cell's stage score (the floor manager's checklist credit, less the damage charges, over its total weight of 10), an episode with a safety violation scoring 0. The oracle runs the same three fixed shifts as the agents, privileged (true poses and process states) but through the cell's own controller, grip rule, safety watch, cart, cleaning processes and shift. A shift replays the same numbers (the layout, the guests' departures, the spill and the noise are drawn from its seed; the grader's BLAS is pinned), so full_at 0.98 only absorbs a last-digit difference between machines."
+}

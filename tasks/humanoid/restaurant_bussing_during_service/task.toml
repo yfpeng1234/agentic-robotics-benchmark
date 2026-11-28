@@ -1,0 +1,70 @@
+# restaurant_bussing_during_service (Physical Execution, humanoid; built 2026-11-28 by Yuanfang Peng).
+#
+# A busser robot through a bistro's lunch shift: one Unitree G1 humanoid (29 DoF, Dex3-1 hands) works the dining room
+# while it is in service. The tables whose parties leave (one or two are left at the start, three or four seated parties
+# leave at drawn times during the shift) are turned: their plates, glasses, cutlery and napkins cleared into the bus tub
+# on the bus cart (pushed by its handle), the tops wiped and sanitized with the cloth from the cart's sanitizer bucket
+# (the crumbs into the crumb pan), a clean roll-up from the station's baskets laid at every seat; the tub's load goes to
+# the dish crew at the dock by the dish-return pass. At a drawn moment a guest spills a drink in the aisle: the wet-floor
+# cone goes up beside it at once, the spill is mopped up with the flat mop, the mop goes back into its clip and, once
+# the floor is dry, the cone back on its spot. At closing the cart stands at its home, the cloth in its bucket, the
+# crumb pan on its hook. Seated guests must never be touched and their things never taken. Which tables are in which
+# state, when each party leaves, where the guests' things, the soil and the crumbs are, the spill's time, place and size
+# and the robot's start pose differ every shift. The agent delivers busser.py (solve(cell): a camera-only program; four
+# ceiling RGB-D cameras and the robot's head RGB-D camera, noisy localisation, joint encoders, joint torque estimates and
+# tactile load; no object poses, no object identities, no table, soil, crumb or spill states on the wire, no event when a
+# party leaves or the drink is spilled), run as an unprivileged account on the 3 shifts of a fixed hidden set
+# (tests/hidden/seeds.json) of the grader's MuJoCo cell over a JSON-lines RPC, in a separate verifier sandbox that holds
+# the submission and nothing else of the agent's. Score = the mean over the shifts of the floor manager's checklist's
+# credited weight less the damage charges (broken dishes, things left on the floor, a seated party's things taken) / 10,
+# a shift with a safety violation (touching a guest is one) scoring 0. There is no practice cell: the agent prepares the
+# program from the manual, the cell's describe() output, survey photos of two other shifts and the robot's model, and it
+# is deployed as it is. The oracle submits the privileged reference busser with a token, on the same hidden shifts.
+# Grader knobs live in tests/grader_config.json.
+
+schema_version = "1.4+ale.1"
+# Where the agent leaves its work (busser.py and its helper modules).
+artifacts = ["/home/user/submission"]
+
+[task]
+name = "grounded-intelligence-initiative/restaurant_bussing_during_service"
+
+[metadata]
+# One of the benchmark's platform keys (tasks/platforms.json); the folder lives at tasks/humanoid/<name>/. The metric
+# (service_score, higher) lives in tests/anchor.json.
+platform = "humanoid"
+tags = ["restaurant", "bussing", "service", "dynamic-events", "tool-use", "cart-pushing", "humanoid", "unitree-g1",
+        "mobile-manipulation", "mujoco", "code-as-policy", "camera-only", "rgbd", "zero-shot", "hidden-set"]
+
+[environment]
+cpus = 8
+memory_mb = 16384
+
+# setup (no field: the engine bounds it at a fixed 1800 s): the agent's givens (seconds). [agent] timeout_sec: 4 h.
+# [verifier] timeout_sec: the import check, then 3 hidden shifts, each a cell build (about 5 s) plus the program within
+# its 3600 s program-time cap, which does not count the cell's simulation (4200 s simulated) and rendering (1500 frames
+# at most); measured on the development machine (2026-11-28, 8 CPUs, the robot walking and pushing the cart) at about
+# 0.3 s of wall clock per simulated second and 1 to 2 s per frame, a shift at the bounds takes about 7500 s of wall clock
+# there and about 8700 s on a machine that renders at 2.3 s per frame: 26,100 s for the three. 36,000 s (10 h) leaves
+# about 35 % for a slower or loaded grading machine (a timeout gives no score: an infrastructure failure, never the
+# agent's 0). The verifier sandbox's start and tests/test.sh's copy of the givens (seconds) count against it too. The
+# oracle's shifts run the reference busser inside one privileged call (its program-time cap is
+# privileged_program_time_cap_s).
+[agent]
+timeout_sec = 14400
+network_mode = "no-network"
+
+# Separate verification: the grader runs as root in a fresh verifier sandbox from the task image that the agent never
+# touched, with only the declared artifact (the submission, restored root-owned) in it, so nothing else the agent left
+# (a file, a process, a program planted on root's PATH) reaches it. environment/setup/setup.sh does not run there (no
+# ~/given): tests/test.sh builds the grader's root-owned copy of the givens (/opt/arb) itself, from
+# tests/setup_payload/ and the image's robot model and survey photos. The agent's program runs during verify, so the
+# verifier gets the agent's resources (CPU rendering: no GPU).
+[verifier]
+timeout_sec = 36000
+environment_mode = "separate"
+
+[verifier.environment]
+cpus = 8
+memory_mb = 16384
+gpus = 0

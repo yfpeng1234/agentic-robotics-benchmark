@@ -1,0 +1,81 @@
+{
+ "format": "bistro-cell-look/1",
+ "note": "The agent cameras' look (render.py): Filament view options (filmic tone mapping, ambient occlusion, soft shadows of the sun only), the procedural image light of the dining room (ibl.py) with its intensity and white balance, and the explicit lights in physical units: the sun in lux (casts shadows), the pendants over the tables and the service area's downlights in candela (no shadows: a shadow map costs a pass per light per frame). A light whose name has no entry takes the entry of its name's prefix before the first underscore.",
+ "view": {
+  "numeric": {
+   "filament.ao.enabled": 1,
+   "filament.ao.quality": 1,
+   "filament.shadows.type": 0,
+   "filament.shadows.map_size": 2048,
+   "filament.bloom.enabled": 1,
+   "filament.bloom.strength": 0.05,
+   "filament.msaa.enabled": 0,
+   "filament.cg.contrast": 1.04,
+   "filament.cg.saturation": 1.0,
+   "filament.fallback.head_light_intensity": 0.0,
+   "filament.fallback.scene_light_intensity": 0.0,
+   "filament.fallback.environment_light_intensity": 0.0
+  },
+  "text": {
+   "filament.cg.tone_mapping": "filmic"
+  }
+ },
+ "ibl": {
+  "size": 64,
+  "intensity": 14000.0,
+  "color": [
+   1.0,
+   0.96,
+   0.9
+  ]
+ },
+ "clear_color": [
+  0.8,
+  0.84,
+  0.88
+ ],
+ "lights": {
+  "sun": {
+   "intensity": 90000.0,
+   "color": [
+    1.0,
+    0.95,
+    0.86
+   ],
+   "shadow": true
+  },
+  "pendant": {
+   "intensity": 9000.0,
+   "color": [
+    1.0,
+    0.82,
+    0.62
+   ],
+   "shadow": false,
+   "cutoff": 62.0,
+   "range": 9.0
+  },
+  "service": {
+   "intensity": 16000.0,
+   "color": [
+    1.0,
+    0.9,
+    0.78
+   ],
+   "shadow": false,
+   "cutoff": 70.0,
+   "range": 10.0
+  },
+  "bounce": {
+   "intensity": 2600.0,
+   "color": [
+    1.0,
+    0.8,
+    0.6
+   ],
+   "shadow": false,
+   "cutoff": 85.0,
+   "range": 8.0
+  }
+ }
+}

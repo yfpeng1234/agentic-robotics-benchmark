@@ -1,0 +1,48 @@
+{
+ "camera": "ceiling_nw",
+ "frame_index": 2,
+ "width": 960,
+ "height": 720,
+ "format": "png",
+ "intrinsics": {
+  "width": 960,
+  "height": 720,
+  "fx": 495.4974913696225,
+  "fy": 495.4974913696225,
+  "cx": 479.5,
+  "cy": 359.5,
+  "fovy_deg": 72.0,
+  "model": "pinhole, no distortion"
+ },
+ "depth_unit_m": 0.001,
+ "depth_invalid_value": 0,
+ "pose_in_room": {
+  "position": [
+   0.25,
+   8.05,
+   2.9
+  ],
+  "rotation": [
+   [
+    -0.7298984024180002,
+    -0.3527431910368404,
+    0.58550880721369
+   ],
+   [
+    -0.6835556467089208,
+    0.37665798364950753,
+    -0.6252043195671606
+   ],
+   [
+    0.0,
+    -0.8565634854056261,
+    -0.5160416605951167
+   ]
+  ]
+ },
+ "sim_time": 819.2,
+ "files": {
+  "rgb": "spill_ceiling_nw_rgb.png",
+  "depth_mm": "spill_ceiling_nw_depth_mm.png"
+ }
+}

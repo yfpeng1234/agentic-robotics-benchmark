@@ -1,0 +1,47 @@
+{
+ "seed_note": "a development shift (not among the graded ones), drawn by the rules of cell_manual.md section 2",
+ "frames": [
+  {
+   "name": "start_ceiling_sw",
+   "camera": "ceiling_sw",
+   "sim_time_s": 0.0,
+   "shows": "the shift's start"
+  },
+  {
+   "name": "start_ceiling_nw",
+   "camera": "ceiling_nw",
+   "sim_time_s": 0.0,
+   "shows": "the shift's start"
+  },
+  {
+   "name": "start_ceiling_center",
+   "camera": "ceiling_center",
+   "sim_time_s": 0.0,
+   "shows": "the shift's start"
+  },
+  {
+   "name": "start_ceiling_service",
+   "camera": "ceiling_service",
+   "sim_time_s": 0.0,
+   "shows": "the shift's start"
+  },
+  {
+   "name": "spill_ceiling_nw",
+   "camera": "ceiling_nw",
+   "sim_time_s": 819.2,
+   "shows": "15 s after a guest at T4 spilled a drink in the aisle"
+  },
+  {
+   "name": "spill_ceiling_center",
+   "camera": "ceiling_center",
+   "sim_time_s": 819.2,
+   "shows": "15 s after a guest at T4 spilled a drink in the aisle"
+  },
+  {
+   "name": "table_end_head",
+   "camera": "head",
+   "sim_time_s": 819.5,
+   "shows": "the head camera at the west end of T8 (0.30 m from the edge, facing east)"
+  }
+ ]
+}

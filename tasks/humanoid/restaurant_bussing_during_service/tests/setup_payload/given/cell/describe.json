@@ -1,0 +1,1073 @@
+{
+ "api": "bistro-cell/1.0",
+ "robot": {
+  "model": "unitree_g1_29dof_dex3 (cell variant)",
+  "start_hint": "beside the bus cart at the service station",
+  "legs_in_images": "the cameras draw the legs stepping while the base moves (drawn only)",
+  "motor_state": {
+   "joints": [
+    "waist_yaw_joint",
+    "waist_roll_joint",
+    "waist_pitch_joint",
+    "left_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_shoulder_yaw_joint",
+    "left_elbow_joint",
+    "left_wrist_roll_joint",
+    "left_wrist_pitch_joint",
+    "left_wrist_yaw_joint",
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint",
+    "right_wrist_roll_joint",
+    "right_wrist_pitch_joint",
+    "right_wrist_yaw_joint",
+    "left_hand_thumb_0_joint",
+    "left_hand_thumb_1_joint",
+    "left_hand_thumb_2_joint",
+    "left_hand_middle_0_joint",
+    "left_hand_middle_1_joint",
+    "left_hand_index_0_joint",
+    "left_hand_index_1_joint",
+    "right_hand_thumb_0_joint",
+    "right_hand_thumb_1_joint",
+    "right_hand_thumb_2_joint",
+    "right_hand_middle_0_joint",
+    "right_hand_middle_1_joint",
+    "right_hand_index_0_joint",
+    "right_hand_index_1_joint"
+   ],
+   "fields": {
+    "q": "rad, exact",
+    "dq": "rad/s, noisy",
+    "tau_est": "N m, estimated from the motor current"
+   },
+   "torque_limits_Nm": {
+    "waist_yaw_joint": 88.0,
+    "waist_roll_joint": 50.0,
+    "waist_pitch_joint": 50.0,
+    "left_shoulder_pitch_joint": 25.0,
+    "left_shoulder_roll_joint": 25.0,
+    "left_shoulder_yaw_joint": 25.0,
+    "left_elbow_joint": 25.0,
+    "left_wrist_roll_joint": 25.0,
+    "left_wrist_pitch_joint": 5.0,
+    "left_wrist_yaw_joint": 5.0,
+    "right_shoulder_pitch_joint": 25.0,
+    "right_shoulder_roll_joint": 25.0,
+    "right_shoulder_yaw_joint": 25.0,
+    "right_elbow_joint": 25.0,
+    "right_wrist_roll_joint": 25.0,
+    "right_wrist_pitch_joint": 5.0,
+    "right_wrist_yaw_joint": 5.0,
+    "left_hand_thumb_0_joint": 2.45,
+    "left_hand_thumb_1_joint": 1.4,
+    "left_hand_thumb_2_joint": 1.4,
+    "left_hand_middle_0_joint": 1.4,
+    "left_hand_middle_1_joint": 1.4,
+    "left_hand_index_0_joint": 1.4,
+    "left_hand_index_1_joint": 1.4,
+    "right_hand_thumb_0_joint": 2.45,
+    "right_hand_thumb_1_joint": 1.4,
+    "right_hand_thumb_2_joint": 1.4,
+    "right_hand_middle_0_joint": 1.4,
+    "right_hand_middle_1_joint": 1.4,
+    "right_hand_index_0_joint": 1.4,
+    "right_hand_index_1_joint": 1.4
+   },
+   "note": "get_state()['robot']['q'], ['dq'] and ['tau_est']: {joint name: value} for every one of these motors, as the G1's low-level state reports them (cell_manual.md section 6)"
+  }
+ },
+ "joints": {
+  "waist": [
+   "waist_yaw_joint",
+   "waist_roll_joint",
+   "waist_pitch_joint"
+  ],
+  "left_arm": [
+   "left_shoulder_pitch_joint",
+   "left_shoulder_roll_joint",
+   "left_shoulder_yaw_joint",
+   "left_elbow_joint",
+   "left_wrist_roll_joint",
+   "left_wrist_pitch_joint",
+   "left_wrist_yaw_joint"
+  ],
+  "right_arm": [
+   "right_shoulder_pitch_joint",
+   "right_shoulder_roll_joint",
+   "right_shoulder_yaw_joint",
+   "right_elbow_joint",
+   "right_wrist_roll_joint",
+   "right_wrist_pitch_joint",
+   "right_wrist_yaw_joint"
+  ],
+  "left_hand": [
+   "left_hand_thumb_0_joint",
+   "left_hand_thumb_1_joint",
+   "left_hand_thumb_2_joint",
+   "left_hand_middle_0_joint",
+   "left_hand_middle_1_joint",
+   "left_hand_index_0_joint",
+   "left_hand_index_1_joint"
+  ],
+  "right_hand": [
+   "right_hand_thumb_0_joint",
+   "right_hand_thumb_1_joint",
+   "right_hand_thumb_2_joint",
+   "right_hand_middle_0_joint",
+   "right_hand_middle_1_joint",
+   "right_hand_index_0_joint",
+   "right_hand_index_1_joint"
+  ]
+ },
+ "joint_ranges": {
+  "waist_yaw_joint": [
+   -2.618,
+   2.618
+  ],
+  "waist_roll_joint": [
+   -0.52,
+   0.52
+  ],
+  "waist_pitch_joint": [
+   -0.52,
+   0.52
+  ],
+  "left_shoulder_pitch_joint": [
+   -3.0892,
+   2.6704
+  ],
+  "left_shoulder_roll_joint": [
+   -1.5882,
+   2.2515
+  ],
+  "left_shoulder_yaw_joint": [
+   -2.618,
+   2.618
+  ],
+  "left_elbow_joint": [
+   -1.0472,
+   2.0944
+  ],
+  "left_wrist_roll_joint": [
+   -1.97222,
+   1.97222
+  ],
+  "left_wrist_pitch_joint": [
+   -1.61443,
+   1.61443
+  ],
+  "left_wrist_yaw_joint": [
+   -1.61443,
+   1.61443
+  ],
+  "right_shoulder_pitch_joint": [
+   -3.0892,
+   2.6704
+  ],
+  "right_shoulder_roll_joint": [
+   -2.2515,
+   1.5882
+  ],
+  "right_shoulder_yaw_joint": [
+   -2.618,
+   2.618
+  ],
+  "right_elbow_joint": [
+   -1.0472,
+   2.0944
+  ],
+  "right_wrist_roll_joint": [
+   -1.97222,
+   1.97222
+  ],
+  "right_wrist_pitch_joint": [
+   -1.61443,
+   1.61443
+  ],
+  "right_wrist_yaw_joint": [
+   -1.61443,
+   1.61443
+  ],
+  "left_hand_thumb_0_joint": [
+   -1.0472,
+   1.0472
+  ],
+  "left_hand_thumb_1_joint": [
+   -0.724312,
+   1.0472
+  ],
+  "left_hand_thumb_2_joint": [
+   0.0,
+   1.74533
+  ],
+  "left_hand_middle_0_joint": [
+   -1.5708,
+   0.0
+  ],
+  "left_hand_middle_1_joint": [
+   -1.74533,
+   0.0
+  ],
+  "left_hand_index_0_joint": [
+   -1.5708,
+   0.0
+  ],
+  "left_hand_index_1_joint": [
+   -1.74533,
+   0.0
+  ],
+  "right_hand_thumb_0_joint": [
+   -1.0472,
+   1.0472
+  ],
+  "right_hand_thumb_1_joint": [
+   -1.0472,
+   0.724312
+  ],
+  "right_hand_thumb_2_joint": [
+   -1.74533,
+   0.0
+  ],
+  "right_hand_middle_0_joint": [
+   0.0,
+   1.5708
+  ],
+  "right_hand_middle_1_joint": [
+   0.0,
+   1.74533
+  ],
+  "right_hand_index_0_joint": [
+   0.0,
+   1.5708
+  ],
+  "right_hand_index_1_joint": [
+   0.0,
+   1.74533
+  ]
+ },
+ "control": {
+  "tick_s": 0.01,
+  "max_ticks_per_step": 500,
+  "base_velocity_max": [
+   0.5,
+   0.3,
+   0.8
+  ],
+  "stand_height_range": [
+   0.48,
+   0.8
+  ],
+  "stand_height_nominal": 0.793,
+  "arm_joint_rate_rad_s": 1.5,
+  "waist_rate_rad_s": 0.8,
+  "grasp_site": {
+   "body": "<side>_wrist_yaw_link",
+   "position": {
+    "left": [
+     0.15,
+     -0.046,
+     0.0
+    ],
+    "right": [
+     0.15,
+     0.046,
+     0.0
+    ]
+   },
+   "axes": "x = approach (along the fingers), y = pinch axis, z = x cross y"
+  }
+ },
+ "grip": {
+  "max_force_N": 30.0,
+  "max_torque_Nm": 5.0,
+  "max_torque_bar_Nm": 20.0,
+  "rule": "see cell_manual.md section 4: closing a hand whose grasp site is at a grasp feature of an object (a bar or cylinder, a slab's edge, a disc's rim, a lump) holds the object; the bus cart's push handle is a bar: held, the cart follows the hands"
+ },
+ "cameras": {
+  "ceiling_sw": {
+   "intrinsics": {
+    "width": 960,
+    "height": 720,
+    "fx": 495.4974913696225,
+    "fy": 495.4974913696225,
+    "cx": 479.5,
+    "cy": 359.5,
+    "fovy_deg": 72.0,
+    "model": "pinhole, no distortion"
+   },
+   "pose_in_room": {
+    "position": [
+     0.25,
+     0.25,
+     2.9
+    ],
+    "rotation": [
+     [
+      0.7298984024180002,
+      -0.3527431910368405,
+      0.58550880721369
+     ],
+     [
+      -0.6835556467089209,
+      -0.37665798364950753,
+      0.6252043195671606
+     ],
+     [
+      -5.551115123125783e-17,
+      -0.8565634854056261,
+      -0.5160416605951167
+     ]
+    ]
+   },
+   "depth_min_m": 0.4
+  },
+  "ceiling_nw": {
+   "intrinsics": {
+    "width": 960,
+    "height": 720,
+    "fx": 495.4974913696225,
+    "fy": 495.4974913696225,
+    "cx": 479.5,
+    "cy": 359.5,
+    "fovy_deg": 72.0,
+    "model": "pinhole, no distortion"
+   },
+   "pose_in_room": {
+    "position": [
+     0.25,
+     8.05,
+     2.9
+    ],
+    "rotation": [
+     [
+      -0.7298984024180002,
+      -0.3527431910368404,
+      0.58550880721369
+     ],
+     [
+      -0.6835556467089208,
+      0.37665798364950753,
+      -0.6252043195671606
+     ],
+     [
+      0.0,
+      -0.8565634854056261,
+      -0.5160416605951167
+     ]
+    ]
+   },
+   "depth_min_m": 0.4
+  },
+  "ceiling_center": {
+   "intrinsics": {
+    "width": 960,
+    "height": 720,
+    "fx": 495.4974913696225,
+    "fy": 495.4974913696225,
+    "cx": 479.5,
+    "cy": 359.5,
+    "fovy_deg": 72.0,
+    "model": "pinhole, no distortion"
+   },
+   "pose_in_room": {
+    "position": [
+     6.55,
+     4.15,
+     2.95
+    ],
+    "rotation": [
+     [
+      1.6653345369377348e-16,
+      0.6123977419104754,
+      -0.7905498122844318
+     ],
+     [
+      0.9999999999999998,
+      -1.6653345369377348e-16,
+      1.1102230246251565e-16
+     ],
+     [
+      -1.1102230246251565e-16,
+      -0.7905498122844318,
+      -0.6123977419104754
+     ]
+    ]
+   },
+   "depth_min_m": 0.4
+  },
+  "ceiling_service": {
+   "intrinsics": {
+    "width": 960,
+    "height": 720,
+    "fx": 495.4974913696225,
+    "fy": 495.4974913696225,
+    "cx": 479.5,
+    "cy": 359.5,
+    "fovy_deg": 72.0,
+    "model": "pinhole, no distortion"
+   },
+   "pose_in_room": {
+    "position": [
+     10.15,
+     0.25,
+     2.9
+    ],
+    "rotation": [
+     [
+      0.9076735170558236,
+      0.18405469888326903,
+      -0.377163962030442
+     ],
+     [
+      0.41967700250968193,
+      -0.39807179060800046,
+      0.8157267085774675
+     ],
+     [
+      -2.7755575615628914e-17,
+      -0.8987005715704921,
+      -0.43856274654702554
+     ]
+    ]
+   },
+   "depth_min_m": 0.4
+  },
+  "head": {
+   "intrinsics": {
+    "width": 640,
+    "height": 480,
+    "fx": 432.97146126514167,
+    "fy": 432.97146126514167,
+    "cx": 319.5,
+    "cy": 239.5,
+    "fovy_deg": 58.0,
+    "model": "pinhole, no distortion"
+   },
+   "mount": {
+    "body": "torso_link",
+    "position": [
+     0.0576235,
+     0.01753,
+     0.42987
+    ],
+    "pitch_down_rad": 0.8307767239493009,
+    "optical_axis": "body +x pitched down"
+   },
+   "depth_min_m": 0.28,
+   "note": "every head frame carries the camera's pose in the room at capture time"
+  }
+ },
+ "camera_budget_frames": 1500,
+ "room": {
+  "frame": "origin at the south-west floor corner, x east, y north, z up, metres",
+  "size": [
+   10.4,
+   8.3,
+   3.2
+  ],
+  "windows_x": [
+   [
+    0.4,
+    2.3
+   ],
+   [
+    2.5,
+    4.4
+   ],
+   [
+    4.6,
+    6.5
+   ],
+   [
+    6.7,
+    8.2
+   ]
+  ],
+  "window_z": [
+   0.45,
+   2.8
+  ],
+  "entrance_x": [
+   8.5,
+   9.5
+  ],
+  "kitchen_door_x": [
+   6.4,
+   7.2
+  ],
+  "tables": {
+   "T1": {
+    "center": [
+     1.25,
+     0.9
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T1S",
+      "chair": [
+       1.25,
+       0.3600000000000001
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       1.25,
+       0.6900000000000001
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T1N",
+      "chair": [
+       1.25,
+       1.44
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       1.25,
+       1.1099999999999999
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T2": {
+    "center": [
+     3.35,
+     0.9
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T2S",
+      "chair": [
+       3.35,
+       0.3600000000000001
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       3.35,
+       0.6900000000000001
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T2N",
+      "chair": [
+       3.35,
+       1.44
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       3.35,
+       1.1099999999999999
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T3": {
+    "center": [
+     5.45,
+     0.9
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T3S",
+      "chair": [
+       5.45,
+       0.3600000000000001
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       5.45,
+       0.6900000000000001
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T3N",
+      "chair": [
+       5.45,
+       1.44
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       5.45,
+       1.1099999999999999
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T4": {
+    "center": [
+     2.3,
+     4.095
+    ],
+    "size": [
+     1.0,
+     0.75
+    ],
+    "top_z": 0.75,
+    "kind": "four_top",
+    "seats": [
+     {
+      "id": "T4Sw",
+      "chair": [
+       2.0599999999999996,
+       3.4799999999999995
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       2.0599999999999996,
+       3.8099999999999996
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T4Se",
+      "chair": [
+       2.54,
+       3.4799999999999995
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       2.54,
+       3.8099999999999996
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T4Nw",
+      "chair": [
+       2.0599999999999996,
+       4.71
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       2.0599999999999996,
+       4.38
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T4Ne",
+      "chair": [
+       2.54,
+       4.71
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       2.54,
+       4.38
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T5": {
+    "center": [
+     4.8,
+     4.095
+    ],
+    "size": [
+     1.0,
+     0.75
+    ],
+    "top_z": 0.75,
+    "kind": "four_top",
+    "seats": [
+     {
+      "id": "T5Sw",
+      "chair": [
+       4.56,
+       3.4799999999999995
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       4.56,
+       3.8099999999999996
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T5Se",
+      "chair": [
+       5.04,
+       3.4799999999999995
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       5.04,
+       3.8099999999999996
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T5Nw",
+      "chair": [
+       4.56,
+       4.71
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       4.56,
+       4.38
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T5Ne",
+      "chair": [
+       5.04,
+       4.71
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       5.04,
+       4.38
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T6": {
+    "center": [
+     1.25,
+     7.29
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T6S",
+      "chair": [
+       1.25,
+       6.75
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       1.25,
+       7.08
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T6N",
+      "chair": [
+       1.25,
+       7.83
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       1.25,
+       7.5
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T7": {
+    "center": [
+     3.35,
+     7.29
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T7S",
+      "chair": [
+       3.35,
+       6.75
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       3.35,
+       7.08
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T7N",
+      "chair": [
+       3.35,
+       7.83
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       3.35,
+       7.5
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   },
+   "T8": {
+    "center": [
+     5.45,
+     7.29
+    ],
+    "size": [
+     0.6,
+     0.6
+    ],
+    "top_z": 0.75,
+    "kind": "two_top",
+    "seats": [
+     {
+      "id": "T8S",
+      "chair": [
+       5.45,
+       6.75
+      ],
+      "faces_rad": 1.570796,
+      "rollup_spot": [
+       5.45,
+       7.08
+      ],
+      "rollup_axis_rad": 1.570796
+     },
+     {
+      "id": "T8N",
+      "chair": [
+       5.45,
+       7.83
+      ],
+      "faces_rad": -1.570796,
+      "rollup_spot": [
+       5.45,
+       7.5
+      ],
+      "rollup_axis_rad": 1.570796
+     }
+    ]
+   }
+  },
+  "table_top_z": 0.75,
+  "chair": {
+   "seat": [
+    0.42,
+    0.42
+   ],
+   "seat_z": 0.46,
+   "seat_t": 0.03,
+   "back_h": 0.9,
+   "back_t": 0.025,
+   "leg": 0.03,
+   "offset": 0.24
+  },
+  "pedestal": {
+   "column_r": 0.04,
+   "base_half": 0.24,
+   "base_h": 0.035
+  },
+  "four_top_legs": {
+   "side": 0.05,
+   "inset": 0.07
+  },
+  "rollup_from_edge": [
+   0.05,
+   0.14
+  ],
+  "station": {
+   "box": [
+    9.8,
+    2.7,
+    0.0,
+    10.4,
+    4.9,
+    0.92
+   ],
+   "shelves_z": [
+    1.35,
+    1.75
+   ],
+   "shelf_depth": 0.3
+  },
+  "pass": {
+   "counter": [
+    7.4,
+    7.78,
+    0.0,
+    9.4,
+    8.3,
+    0.92
+   ],
+   "opening_z": [
+    0.92,
+    1.95
+   ]
+  },
+  "dock": {
+   "box_xy": [
+    7.5,
+    6.95,
+    9.3,
+    7.74
+   ],
+   "cart_yaw_rad": 0.0,
+   "yaw_tolerance_rad": 0.20943951023931956,
+   "crew_after_s": 20.0
+  },
+  "host_stand": [
+   7.45,
+   0.55,
+   0.0,
+   7.95,
+   0.95,
+   1.12
+  ],
+  "planters": {
+   "nw": {
+    "center": [
+     0.4,
+     7.95
+    ],
+    "radius": 0.22,
+    "h": 0.55
+   },
+   "sw_window": {
+    "center": [
+     8.85,
+     0.35
+    ],
+    "radius": 0.2,
+    "h": 0.45
+   }
+  },
+  "cart": {
+   "size": [
+    0.95,
+    0.4
+   ],
+   "top_z": 0.76,
+   "lower_z": 0.3,
+   "handle_z": 0.98,
+   "handle_x": -0.545,
+   "handle_half_length": 0.17,
+   "handle_radius": 0.0125,
+   "home": [
+    8.05,
+    3.8,
+    3.141592653589793
+   ],
+   "tub_at": [
+    0.18,
+    0.0
+   ],
+   "bucket_at": [
+    -0.3,
+    0.0
+   ],
+   "pan_hook": [
+    -0.505,
+    0.0,
+    0.74
+   ],
+   "frame": "origin on the floor under the top shelf's middle, x towards the front (away from the handle), y to its left"
+  },
+  "tub": {
+   "outer": [
+    0.58,
+    0.36
+   ],
+   "h": 0.14,
+   "wall_t": 0.006
+  },
+  "bucket": {
+   "r": 0.115,
+   "h": 0.1,
+   "fill_h": 0.088
+  },
+  "rollup_baskets": [
+   {
+    "center": [
+     9.93,
+     3.15
+    ],
+    "size": [
+     0.2,
+     0.3
+    ],
+    "h": 0.07
+   },
+   {
+    "center": [
+     9.93,
+     3.55
+    ],
+    "size": [
+     0.2,
+     0.3
+    ],
+    "h": 0.07
+   }
+  ],
+  "mop": {
+   "bucket": [
+    10.15,
+    5.98
+   ],
+   "bucket_size": [
+    0.4,
+    0.28,
+    0.42
+   ],
+   "clip": [
+    10.3,
+    5.45,
+    1.1
+   ]
+  },
+  "cone_home": [
+   10.05,
+   6.58
+  ],
+  "cone_home_tolerance": 0.25
+ },
+ "budgets": {
+  "sim_cap_s": 4200.0,
+  "program_time_cap_s": 3600.0,
+  "program_time": "the episode's wall clock minus the cell's own time inside step (simulation) and get_camera (rendering)",
+  "silence_s": 120.0,
+  "cpu_time_cap_s": 14400.0,
+  "cpu_time": "the program process's CPU time, all threads (SIGXCPU beyond it); OMP_NUM_THREADS, OPENBLAS_NUM_THREADS and MKL_NUM_THREADS are 2"
+ },
+ "safety": {
+  "robot_contact_N": 150.0,
+  "robot_contact_s": 0.2,
+  "throw_speed_m_s": 1.5,
+  "strike_speed_m_s": 4.0,
+  "guest_contact_N": 5.0,
+  "guest_contact_s": 0.03
+ }
+}

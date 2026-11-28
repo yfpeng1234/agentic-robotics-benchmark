@@ -1,0 +1,8 @@
+{
+ "seeds": [
+  1492138996,
+  1624528916,
+  671106925
+ ],
+ "rule": "seed_k = 1000 + int(sha256('restaurant_bussing_during_service hidden set v1/k')[:12], 16) mod (2^31 - 1000), k = 0, 1, 2 (the development seeds 1-5, 11, 12, 101, 102 excluded); no seed was drawn, looked at or replaced on its outcome"
+}
